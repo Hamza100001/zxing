@@ -1,0 +1,21 @@
+import qrcode
+
+# Data to be encoded
+data = """Name: Hamza Ahmed Saad
+Job: Graphic Designer
+Phone: 01065129523
+Email: hamza.a.doct@gmail.com"""
+
+# Creating a QR code
+qr = qrcode.QRCode(version=1, box_size=10, border=5)
+qr.add_data(data)
+qr.make(fit=True)
+
+# Creating an image from the QR Code instance
+qr_image = qr.make_image(fill="black", back_color="white")
+
+# Saving the QR code image
+qr_code_path = "/mnt/data/Hamza_Ahmed_Saad_QR.png"
+qr_image.save(qr_code_path)
+
+qr_code_path
